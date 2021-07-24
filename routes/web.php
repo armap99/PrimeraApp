@@ -3,17 +3,12 @@
 //Rutas de nuetra pagina
 
 Route::get('/', function () {
-    //return "Hola desde la pagina de inicio";
-    echo "<a href='" . route('contactos') . "'>Contactos 1<br>";
-    echo "<a href='" . route('contactos') . "'>Contactos 2<br>";
-    echo "<a href='" . route('contactos') . "'>Contactos 3<br>";
-    echo "<a href='" . route('contactos') . "'>Contactos 4<br>";
-    echo "<a href='" . route('contactos') . "'>Contactos 5<br>";
-});
+    return view('home');//no es necesario poner toda la ruta solo el nombre de la vista
+})->name('home');
 
-Route::get('contacto', function () {
-    return "vista de la pagina de contacto";
-});
+Route::view('/about', 'about')->name('about');
+Route::view('/portfolio', 'portfolio')->name('portfolio');
+Route::view('/contact', 'contact')->name('contact');
 
 Route::get('saludo/{nombre}', function ($nombre) {
     return "Saludos " . $nombre;
