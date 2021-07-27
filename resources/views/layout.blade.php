@@ -4,14 +4,15 @@
 <head>
     <title>@yield('title')</title>
     <meta charset="UTF-8">
+    <style>
+        .active a{
+            color: red;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/contact">Contact</a></li>
-    </nav>
+    @include('partials/nav')
     @yield('content')
 </body>
 </html>
