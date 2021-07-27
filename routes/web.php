@@ -13,6 +13,7 @@ Route::view('/about', 'about')->name('about');
 Route::get('/portfolio','App\Http\Controllers\PortfolioControllerR@index')->name('portfolio');
 //Route::get('/portfolio','App\Http\Controllers\PortfolioController')->name('portfolio');
 Route::view('/contact', 'contact')->name('contact');
+Route::post('contact', 'App\Http\Controllers\MessagesController@store');
 
 //Para hacer las rutas de todos los metodos 
 //Route::resource('projects', PortfolioControllerR::class);//-> only(['indes', 'show']) lo mismo con except
