@@ -7,7 +7,7 @@
 
     <ul> 
         @forelse ($portfolio as $portfolioItem) 
-            <li>{{$portfolioItem['title']}} </li>
+            <li>{{$portfolioItem->title}} </li>
         @empty
             <li>No hay proyectos</li>
         @endforelse

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Models\Project;
 
 class PortfolioControllerR extends Controller
 {
@@ -13,14 +15,12 @@ class PortfolioControllerR extends Controller
      */
     public function index()
     {
-        $portfolio = [
-            ['title' => 'Proyecto #1'],
-            ['title' => 'Proyecto #2'],
-            ['title' => 'Proyecto #3'],
-            ['title' => 'Proyecto #4'],
-        ];
+        //$portfolio = DB::table('projects')->get();//sin orm
+         
+        return view('portfolio', [
+            'portfolio' => Project::get()//con Eloquent
 
-        return view('portfolio',compact('portfolio'));
+        ]);
     }
 
     
