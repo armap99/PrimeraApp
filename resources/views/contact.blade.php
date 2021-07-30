@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Contact</h1>
-    <form method="POST" action="{{ route('contact') }}">
+    <form method="POST" action="{{ route('messages.store') }}">
         @csrf <!-- Proteger los fromularios -->
         <input type="text" name="name" placeholder="Nombre..." value="{{old('name')}}"><br>
         {!!$errors-> first('name', '<small>:message</small><br>') !!} <!-- los dos !! son para poder imprimir html-->

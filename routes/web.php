@@ -10,13 +10,18 @@ use App\Http\Controllers\PortfolioControllerR;
 
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
-Route::get('/portfolio','App\Http\Controllers\PortfolioControllerR@index')->name('portfolio');
+Route::get('/portfolio','App\Http\Controllers\ProjectControllerR@index')->name('portfolio.index');
+Route::get('/portfolio/crear','App\Http\Controllers\ProjectControllerR@create')->name('portfolio.create');
+
+Route::post('/portfolio','App\Http\Controllers\ProjectControllerR@store')->name('projects.store');
+
+Route::get('/portfolio/{id}','App\Http\Controllers\ProjectControllerR@show')->name('portfolio.show');
 //Route::get('/portfolio','App\Http\Controllers\PortfolioController')->name('portfolio');
 Route::view('/contact', 'contact')->name('contact');
-Route::post('contact', 'App\Http\Controllers\MessagesController@store');
+Route::post('contact', 'App\Http\Controllers\MessagesController@store')->name('messages.store');
 
 //Para hacer las rutas de todos los metodos 
-//Route::resource('projects', PortfolioControllerR::class);//-> only(['indes', 'show']) lo mismo con except
+//Route::resource('projects', ProjectControllerR::class);//-> only(['indes', 'show']) lo mismo con except
 
 /*Route::get('saludo/{nombre}', function ($nombre) {
     return "Saludos " . $nombre;

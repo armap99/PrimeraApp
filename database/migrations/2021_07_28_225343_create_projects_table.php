@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateProjectsTable extends Migration
 {
     //php artisan make:migration create_projects_table para crear migraciones
+    //php artisan migrate:refresh para actualizar migraciones 
     /**
      * Run the migrations.
      *
@@ -17,6 +18,7 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('url');
             $table->text('description');
             $table->timestamps();
         });
