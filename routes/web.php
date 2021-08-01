@@ -10,12 +10,13 @@ use App\Http\Controllers\PortfolioControllerR;
 
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
+
 Route::get('/portfolio','App\Http\Controllers\ProjectControllerR@index')->name('portfolio.index');
 Route::get('/portfolio/crear','App\Http\Controllers\ProjectControllerR@create')->name('portfolio.create');
-
+Route::get('/portfolio/{project}/editar','App\Http\Controllers\ProjectControllerR@edit')->name('portfolio.edit');
 Route::post('/portfolio','App\Http\Controllers\ProjectControllerR@store')->name('projects.store');
-
 Route::get('/portfolio/{id}','App\Http\Controllers\ProjectControllerR@show')->name('portfolio.show');
+
 //Route::get('/portfolio','App\Http\Controllers\PortfolioController')->name('portfolio');
 Route::view('/contact', 'contact')->name('contact');
 Route::post('contact', 'App\Http\Controllers\MessagesController@store')->name('messages.store');

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Project;
-use App\Http\Request\CreateProjectRequest;
+use App\Http\Requests\CreateProjectRequest;
+
 
 class ProjectControllerR extends Controller
 {
@@ -47,6 +48,12 @@ class ProjectControllerR extends Controller
         Project::create($request->validated());//form request
 
         return redirect()->route('portfolio.index');
+    }
+
+    public function edit(Project $project){
+        return view('projects.edit',[
+            'projecto' => $project
+        ]);
     }
     
 }
