@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Project;
+use App\Http\Request\CreateProjectRequest;
 
 class ProjectControllerR extends Controller
 {
@@ -34,16 +35,16 @@ class ProjectControllerR extends Controller
         return view('projects.create');
     }
 
-    public function store(){
-        $tilte = request('title');
-        $url = request('url');
-        $description = request('description');
+    public function store(CreateProjectRequest $request){
 
-        Project::create([
-            'title' => $tilte,
-            'url' => $url,
-            'description' => $description,
-        ]);
+        // $fields = request()->validate([
+        //     'title' => 'required',
+        //     'url' => 'required',
+        //     'description' =>'required',
+        // ]);
+        
+
+        Project::create($request->validated());//form request
 
         return redirect()->route('portfolio.index');
     }
