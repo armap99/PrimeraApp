@@ -56,4 +56,9 @@ class ProjectControllerR extends Controller
         ]);
     }
     
+    public function update(Project $project, CreateProjectRequest $request){
+        
+        $project->update($request->validated());
+        return redirect()->route('portfolio.show',$project);
+    }
 }
