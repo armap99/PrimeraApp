@@ -24,6 +24,8 @@ Route::get('/portfolio/{id}','App\Http\Controllers\ProjectControllerR@show')->na
 Route::view('/contact', 'contact')->name('contact');
 Route::post('contact', 'App\Http\Controllers\MessagesController@store')->name('messages.store');
 
+Route::delete('/portfolio/{project}/e','App\Http\Controllers\ProjectControllerR@destroy')->name('portfolio.destroy');
+
 //Para hacer las rutas de todos los metodos 
 //Route::resource('projects', ProjectControllerR::class);//-> only(['indes', 'show']) lo mismo con except
 

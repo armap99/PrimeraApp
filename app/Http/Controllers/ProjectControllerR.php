@@ -33,7 +33,9 @@ class ProjectControllerR extends Controller
     }
 
     public function create(){
-        return view('projects.create');
+        return view('projects.create',[
+            'projecto' => new Project
+        ]);
     }
 
     public function store(CreateProjectRequest $request){
@@ -60,5 +62,10 @@ class ProjectControllerR extends Controller
         
         $project->update($request->validated());
         return redirect()->route('portfolio.show',$project);
+    }
+
+    public function destroy(Project $project){
+        $project->delete();
+        return redirect()->route('portfolio.index');
     }
 }
