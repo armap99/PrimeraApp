@@ -21,6 +21,6 @@ class MessagesController extends Controller
         //Enviar correos
         Mail::to('armap1999@hotmail.com')->queue(new MessageReceived($mensaje));//send o queue para que siga funcionando y mande el correo a segundo plano
 
-        return 'Mensaje enviado';
+        return back()->with('status','Recibimos tu mensaje');
     }
 }

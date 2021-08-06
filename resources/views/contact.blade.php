@@ -4,6 +4,11 @@
 
 @section('content')
     <h1>Contact</h1>
+
+    @if (session('status'))
+        {{session('status')}}
+    @endif
+
     <form method="POST" action="{{ route('messages.store') }}">
         @csrf <!-- Proteger los fromularios -->
         <input type="text" name="name" placeholder="Nombre..." value="{{old('name')}}"><br>
