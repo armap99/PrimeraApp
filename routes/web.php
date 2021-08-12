@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\PortfolioControllerR;
+use App\Http\Controllers\ProjectControllerR;
 
 //para crear login y registro php artisan make:auth
 

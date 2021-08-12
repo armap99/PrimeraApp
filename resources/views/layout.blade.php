@@ -4,14 +4,9 @@
 <head>
     <title>@yield('title')</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../resources/css/app.css">
-    <script src="../resources/js/app.js" defer></script><!-- defer es para que lo cargue hasta el final-->
-    <style>
-        .active a{
-            color: red;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    <script src="{{ mix('/js/app.js') }}" defer></script><!-- defer es para que lo cargue hasta el final-->
+
 </head>
 <body>
     @include('partials/nav')
